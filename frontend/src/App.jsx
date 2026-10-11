@@ -7,6 +7,7 @@ import AdminDashboard from './components/AdminDashboard';
 import FarmsSuppliers from './components/FarmsSuppliers';
 import BatchesExplorer from './components/BatchesExplorer';
 import SupplyChainExplorer from './components/SupplyChainExplorer';
+import TraceabilitySearch from './components/TraceabilitySearch';
 import AnalyticsReports from './components/AnalyticsReports';
 import TraceabilityModal from './components/TraceabilityModal';
 import CypherModal from './components/CypherModal';
@@ -182,10 +183,8 @@ export default function App() {
                 />
               )}
               {activePage === 'traceability-search' && (
-                <BatchesExplorer
+                <TraceabilitySearch
                   batches={batches}
-                  crops={crops}
-                  onSelectBatchForTrace={handleSelectBatchForTrace}
                 />
               )}
               {activePage === 'analytics-and-reports' && <AnalyticsReports />}
