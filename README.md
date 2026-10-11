@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PhytoTrace — Botanical Supply Chain Traceability Using Property Graphs
 
 [![Frontend: React + Vite](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-61DAFB?logo=react)](https://react.dev/)
@@ -190,3 +191,6 @@ The repository includes a ready-to-use `netlify.toml`:
 5. In **Site Configuration > Environment Variables**, add:
    - `VITE_API_BASE_URL`: The URL of your hosted FastAPI backend (e.g., hosted on Render, Railway, Fly.io, or AWS).
 6. Click **Deploy Site**.
+=======
+# botanical-traceability
+>>>>>>> 5573bdf2ccfd7fb2b704c46cd0c0e3142c81f635
