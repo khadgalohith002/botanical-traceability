@@ -1,0 +1,29 @@
+[
+  {
+    "batch_id": "TUR-2026-005",
+    "crop_id": "TUR",
+    "category": "Roots & Rhizomes",
+    "botanical": "Turmeric",
+    "scientific_name": "Curcuma longa",
+    "variety": "Certified Organic",
+    "farmer": "Ravi Patel",
+    "farm_id": "FRM-TUR-1011",
+    "farm_name": "Patel Organic Sanctuary",
+    "location": "Surat, Gujarat",
+    "supplier": "Regional FPO Collective",
+    "harvest_date": "2026-10-12",
+    "harvest_qty_kg": 600,
+    "processor": "Regional Botanical Extraction Facility",
+    "processed_batch_id": "PRC-TUR-2026-005",
+    "manufacturer": "AyurPharma Formulation Labs",
+    "finished_batch_id": "FIN-TUR-2026-005",
+    "distributor": "Central Agro-Logistics Depot",
+    "retailer": "PureBotanics Herbal Dispensary",
+    "retail_location": "Bengaluru, Karnataka",
+    "current_stage": "Harvest Batch",
+    "simple_stage": "stage_harvested",
+    "status": "Pending Verification",
+    "notes": "Sample test harvest",
+    "timestamp": "2026-10-11T15:32:40.109956"
+  }
+]

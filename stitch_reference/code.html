@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=JetBrains+Mono:wght@100..900&family=Space+Grotesk:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error-container":"#ffdad6","primary-fixed-dim":"#aecdbf","tertiary":"#00180d","outline-variant":"#c1c8c3","surface-container-high":"#dee8ff","on-primary-container":"#789688","inverse-surface":"#263143","primary-fixed":"#caeada","background":"#f9f9ff","on-tertiary-fixed":"#002113","secondary-fixed":"#b1f0ce","secondary":"#2c694e","surface-tint":"#486458","on-secondary-fixed-variant":"#0e5138","error":"#ba1a1a","tertiary-container":"#002f1d","on-error":"#ffffff","tertiary-fixed-dim":"#75daa8","on-primary":"#ffffff","on-tertiary-container":"#39a173","primary":"#00180f","on-surface":"#111c2d","inverse-primary":"#aecdbf","on-primary-fixed-variant":"#314c41","on-tertiary":"#ffffff","surface":"#f9f9ff","surface-container-lowest":"#ffffff","on-background":"#111c2d","on-surface-variant":"#424845","surface-container-highest":"#d8e3fb","tertiary-fixed":"#92f7c3","on-primary-fixed":"#032017","on-secondary-fixed":"#002114","on-tertiary-fixed-variant":"#005235","surface-container-low":"#f0f3ff","surface-container":"#e7eeff","on-secondary-container":"#316e52","surface-bright":"#f9f9ff","secondary-container":"#aeeecb","outline":"#727974","surface-variant":"#d8e3fb","surface-dim":"#cfdaf2","secondary-fixed-dim":"#95d4b3","on-error-container":"#93000a","inverse-on-surface":"#ecf1ff","primary-container":"#112d23","on-secondary":"#ffffff"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-md":"1rem",gutter:"1rem","space-lg":"1.5rem","margin-desktop":"2rem",margin:"1rem","space-sm":"0.5rem","space-xs":"0.25rem","space-xl":"2.5rem","gutter-desktop":"1.5rem"},fontFamily:{"headline-lg-mobile":["Space Grotesk"],"label-md":["JetBrains Mono"],"body-sm":["Hanken Grotesk"],"headline-xl-mobile":["Space Grotesk"],"body-lg":["Hanken Grotesk"],"headline-md":["Space Grotesk"],"headline-xl":["Space Grotesk"],"label-lg":["JetBrains Mono"],"headline-lg":["Space Grotesk"],"body-semibold":["Hanken Grotesk"],"label-sm":["JetBrains Mono"],"headline-sm":["Space Grotesk"],"body-md":["Hanken Grotesk"]},fontSize:{"headline-lg-mobile":["22px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-md":["11px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"headline-xl-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-md":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-xl":["36px",{lineHeight:"44px",letterSpacing:"-0.03em",fontWeight:"700"}],"label-lg":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"500"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"600"}],"body-semibold":["14px",{lineHeight:"20px",fontWeight:"600"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"500"}],"headline-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-primary-container z-50 flex flex-col justify-between text-on-primary shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm bg-primary/20"><img alt="PhytoTrace Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VIAhYO5a6n74Yi1IbEkInZu9XgAhzy6j0noCvYEdUaPaVyxp_bBsSIBeFXyLdbvCcHDVwriKIZv02r9x9_51dgQ8_v7hqQjosHQ4QJUYRaJKHGJ5PZIJ5vOAbcSLIveeV-C9IoYIXGkFMKjQ23B5_3wcpFDJYnvJ3KB1mE3AOUZpSOgM2EHcZExN20QKUvvgTDAXRKwKJdvFiBacIKDeoUu22mNNvbwgUWn9Y-KcTYGn09Idbk9kYd_w"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-primary tracking-tight font-semibold leading-tight">PhytoTrace</span><span class="font-label-sm text-label-sm text-on-primary-container tracking-wide">Graph Analytics v2.4</span></div></div><div class="px-space-md py-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-primary-container">Provenance Core</span></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-secondary text-on-secondary font-body-semibold text-body-semibold rounded-lg"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-colors bg-secondary text-on-secondary font-body-semibold text-body-semibold rounded-lg" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-secondary/40 hover:text-on-primary transition-colors font-body-md text-body-md" data-path="farms-and-suppliers" href="#"><span class="material-symbols-outlined text-[20px]">agriculture</span><span>Farms & Suppliers</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-secondary/40 hover:text-on-primary transition-colors font-body-md text-body-md" data-path="botanical-batches" href="#"><span class="material-symbols-outlined text-[20px]">potted_plant</span><span>Botanical Batches</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-secondary/40 hover:text-on-primary transition-colors font-body-md text-body-md" data-path="supply-chain-explorer" href="#"><span class="material-symbols-outlined text-[20px]">account_tree</span><span>Supply Chain Explorer</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-secondary/40 hover:text-on-primary transition-colors font-body-md text-body-md" data-path="traceability-search" href="#"><span class="material-symbols-outlined text-[20px]">terminal</span><span>Traceability Search</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-primary-container hover:bg-secondary/40 hover:text-on-primary transition-colors font-body-md text-body-md" data-path="analytics-and-reports" href="#"><span class="material-symbols-outlined text-[20px]">insights</span><span>Analytics & Reports</span></a></nav></div><div class="flex flex-col bg-primary/40"><div class="p-space-sm flex flex-col gap-space-xs font-label-sm text-label-sm"><div class="flex items-center justify-between"><span class="text-on-primary-container flex items-center gap-space-xs"><span class="h-2 w-2 rounded-full bg-secondary-container inline-block"></span>Neo4j Bolt:</span><span class="text-on-primary font-label-sm text-label-sm">Connected</span></div><div class="text-on-primary-container truncate font-label-sm text-label-sm">bolt://neo4j.local:7687</div><div class="flex items-center justify-between text-on-primary-container pt-space-xs"><span class="font-label-sm text-label-sm">Database:</span><span class="text-secondary-fixed font-label-sm text-label-sm font-semibold">phyto_prod</span></div><div class="flex items-center justify-between text-on-primary-container"><span class="font-label-sm text-label-sm">Graph Nodes:</span><span class="text-on-primary font-label-sm text-label-sm font-semibold">14,820</span></div></div><div class="px-space-sm py-space-sm bg-primary/60 flex items-center justify-between"><div class="flex items-center gap-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col"><span class="font-body-semibold text-body-semibold text-on-primary leading-none">Dr. Aris Vance</span><span class="font-label-sm text-label-sm text-on-primary-container leading-none mt-space-xs">Lead Ontologist</span></div></div><span class="material-symbols-outlined text-on-primary-container text-[18px] hover:text-on-primary cursor-pointer">more_vert</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">schema</span><span>Botanical Supply Chain</span><span class="text-outline">/</span><span class="text-on-surface font-body-semibold text-body-semibold">Dashboard</span></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-[18px] text-outline">search</span><input class="w-96 pl-9 pr-14 py-space-xs h-9 bg-surface-container-low text-on-surface placeholder:text-outline font-label-sm text-label-sm rounded-lg focus:outline-none focus:bg-surface-container transition-all" placeholder="Search lots, botanicals or Cypher: MATCH (n)..." type="text"/><span class="absolute right-space-sm px-space-xs py-0.5 bg-surface-container-high rounded font-label-sm text-label-sm text-on-surface-variant">Ctrl+K</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low rounded-lg"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface font-medium">Neo4j 5.18 Enterprise</span></div><div class="flex items-center gap-space-xs"><button class="h-9 px-space-sm bg-surface-container-low text-on-surface hover:bg-surface-container hover:text-on-surface rounded-lg font-label-md text-label-md flex items-center gap-space-xs transition-colors"><span class="material-symbols-outlined text-[16px]">calendar_today</span><span>Last 30 Days</span><span class="material-symbols-outlined text-[16px]">expand_more</span></button><button class="h-9 px-space-sm bg-surface-container-low text-on-surface hover:bg-surface-container hover:text-on-surface rounded-lg font-label-md text-label-md flex items-center gap-space-xs transition-colors"><span class="material-symbols-outlined text-[16px]">file_download</span><span>CSV / Cypher</span></button></div><div class="flex items-center gap-space-sm pl-space-sm"><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-error"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-margin-desktop flex flex-col gap-space-lg">
+<!-- DASHBOARD HEADER -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm uppercase tracking-wide">
+            Neo4j Property Graph
+          </span>
+<span class="text-outline-variant font-label-sm text-label-sm">|</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary inline-block"></span> Bolt Session Active
+          </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+          Botanical Supply Chain Overview
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Track botanical origins, suppliers, and product journeys from farm to retailer with deterministic acyclic graph verification.
+        </p>
+</div>
+<!-- Action Toolbar -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Date Selector -->
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 bg-surface-container-low rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">date_range</span>
+<span class="font-label-sm text-label-sm text-on-surface">Jun 1, 2024 – Oct 15, 2024</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</div>
+<!-- Botanical Filter -->
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 bg-surface-container-low rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">filter_alt</span>
+<span class="font-label-sm text-label-sm text-on-surface">All Botanicals (3 Taxa)</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</div>
+<!-- Run Cypher Button -->
+<button class="flex items-center gap-space-xs px-space-md py-1.5 bg-secondary text-on-secondary font-label-md text-label-md rounded-lg shadow-sm hover:bg-tertiary-container transition-all">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span>Run Cypher Query</span>
+</button>
+</div>
+</div>
+<!-- 4-COLUMN KPI CARDS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Total Farms</span>
+<span class="font-headline-xl text-headline-xl text-on-surface leading-none mt-1">128</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">location_on</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+12 verified this quarter</span>
+</div>
+<div class="flex gap-0.5 items-end h-4 w-12">
+<span class="w-2 bg-secondary/30 rounded-t h-2"></span>
+<span class="w-2 bg-secondary/50 rounded-t h-3"></span>
+<span class="w-2 bg-secondary/70 rounded-t h-2.5"></span>
+<span class="w-2 bg-secondary rounded-t h-4"></span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Active Suppliers</span>
+<span class="font-headline-xl text-headline-xl text-on-surface leading-none mt-1">342</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">diversity_3</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="text-on-surface-variant font-label-sm text-label-sm">98.4% compliance rate</span>
+<span class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">Tier-1 Valid</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Harvest Batches</span>
+<span class="font-headline-xl text-headline-xl text-on-surface leading-none mt-1">1,845</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">spa</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="text-on-surface-variant font-label-sm text-label-sm">124,500 kg total yield</span>
+<span class="text-secondary font-label-sm text-label-sm font-semibold">28 Nodes Active</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Pending Verification</span>
+<span class="font-headline-xl text-headline-xl text-on-surface leading-none mt-1">19</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-error font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>4 flagged for QA audit</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">Action Req.</span>
+</div>
+</div>
+</div>
+<!-- MAIN TWO-COLUMN LAYOUT (7 / 5 SPLIT) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN (7 COLS) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- PROPERTY GRAPH CARD -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden flex flex-col">
+<!-- Card Header -->
+<div class="p-space-md bg-surface-container-low/50 flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">account_tree</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Property Graph Schema & Lineage Flow</h2>
+<span class="px-space-xs py-0.5 bg-secondary/10 text-secondary font-label-sm text-label-sm rounded uppercase">
+                Neo4j DAG View
+              </span>
+</div>
+<!-- Viewport Actions -->
+<div class="flex items-center gap-space-xs">
+<button class="w-8 h-8 rounded bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Zoom in">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+</button>
+<button class="w-8 h-8 rounded bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Zoom out">
+<span class="material-symbols-outlined text-[16px]">zoom_out</span>
+</button>
+<button class="w-8 h-8 rounded bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Center layout">
+<span class="material-symbols-outlined text-[16px]">filter_center_focus</span>
+</button>
+<button class="w-8 h-8 rounded bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Fullscreen">
+<span class="material-symbols-outlined text-[16px]">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Interactive Node Legend Bar -->
+<div class="px-space-md py-space-xs bg-surface-container-low flex flex-wrap items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="uppercase font-semibold tracking-wider text-outline text-[9px]">Node Ontologies:</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface shadow-xs">
+<span class="h-2 w-2 rounded-full bg-secondary"></span> Farm
+            </span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface shadow-xs">
+<span class="h-2 w-2 rounded-full bg-[#52B788]"></span> Botanical
+            </span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface shadow-xs">
+<span class="h-2 w-2 rounded-full bg-[#0284C7]"></span> Harvest Batch
+            </span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface shadow-xs">
+<span class="h-2 w-2 rounded-full bg-[#7C3AED]"></span> Processor
+            </span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface shadow-xs">
+<span class="h-2 w-2 rounded-full bg-[#D97706]"></span> Manufacturer
+            </span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface shadow-xs">
+<span class="h-2 w-2 rounded-full bg-[#0D9488]"></span> Distributor
+            </span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface shadow-xs">
+<span class="h-2 w-2 rounded-full bg-[#64748B]"></span> Retailer
+            </span>
+</div>
+<!-- SVG Visual Property Graph -->
+<div class="relative w-full overflow-x-auto bg-[#FBFDFB] p-space-md flex items-center justify-center">
+<svg class="w-full min-w-[880px] h-[230px]" fill="none" viewbox="0 0 980 230" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrow" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="8" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#727974"></path>
+</marker>
+<marker id="arrow-active" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="8" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#2C694E"></path>
+</marker>
+<filter height="120%" id="nodeShadow" width="120%" x="-10%" y="-10%">
+<fedropshadow dx="0" dy="2" flood-color="#111c2d" flood-opacity="0.08" stddeviation="2"></fedropshadow>
+</filter>
+</defs>
+<!-- Connection 1: Farm -> Botanical -->
+<path d="M 125 110 L 225 110" marker-end="url(#arrow)" stroke="#727974" stroke-dasharray="4 3" stroke-width="2"></path>
+<rect fill="#F0F3FF" height="15" rx="3" width="80" x="135" y="94"></rect>
+<text fill="#424845" font-family="JetBrains Mono" font-size="8.5" font-weight="600" text-anchor="middle" x="175" y="105">HARVESTED</text>
+<!-- Connection 2: Botanical -> Batch -->
+<path d="M 275 110 L 375 110" marker-end="url(#arrow-active)" stroke="#2C694E" stroke-width="2"></path>
+<rect fill="#CAEADA" height="15" rx="3" width="80" x="285" y="94"></rect>
+<text fill="#032017" font-family="JetBrains Mono" font-size="8.5" font-weight="600" text-anchor="middle" x="325" y="105">PRODUCED_IN</text>
+<!-- Connection 3: Batch -> Processor -->
+<path d="M 425 110 L 525 110" marker-end="url(#arrow-active)" stroke="#2C694E" stroke-width="2"></path>
+<rect fill="#CAEADA" height="15" rx="3" width="85" x="432" y="94"></rect>
+<text fill="#032017" font-family="JetBrains Mono" font-size="8.5" font-weight="600" text-anchor="middle" x="474.5" y="105">TRANSFERRED</text>
+<!-- Connection 4: Processor -> Manufacturer -->
+<path d="M 575 110 L 675 110" marker-end="url(#arrow)" stroke="#727974" stroke-width="2"></path>
+<rect fill="#F0F3FF" height="15" rx="3" width="80" x="585" y="94"></rect>
+<text fill="#424845" font-family="JetBrains Mono" font-size="8.5" font-weight="600" text-anchor="middle" x="625" y="105">FORMULATED</text>
+<!-- Connection 5: Manufacturer -> Distributor -->
+<path d="M 725 110 L 820 110" marker-end="url(#arrow)" stroke="#727974" stroke-width="2"></path>
+<rect fill="#F0F3FF" height="15" rx="3" width="75" x="735" y="94"></rect>
+<text fill="#424845" font-family="JetBrains Mono" font-size="8.5" font-weight="600" text-anchor="middle" x="772.5" y="105">SHIPPED_VIA</text>
+<!-- Connection 6: Distributor -> Retailer -->
+<path d="M 870 110 L 935 110" marker-end="url(#arrow)" stroke="#727974" stroke-dasharray="3 3" stroke-width="2"></path>
+<rect fill="#F0F3FF" height="15" rx="3" width="50" x="878" y="94"></rect>
+<text fill="#424845" font-family="JetBrains Mono" font-size="8" font-weight="600" text-anchor="middle" x="903" y="105">DELIVER</text>
+<!-- NODE 1: FARM -->
+<g class="cursor-pointer" filter="url(#nodeShadow)" transform="translate(75, 110)">
+<circle fill="#FFFFFF" r="46"></circle>
+<circle fill="#EBF5F0" r="42"></circle>
+<circle fill="#2C694E" r="22"></circle>
+<text fill="#FFFFFF" font-family="Material Symbols Outlined" font-size="18" text-anchor="middle" x="0" y="5">agriculture</text>
+<text fill="#111C2D" font-family="Space Grotesk" font-size="11" font-weight="600" text-anchor="middle" x="0" y="58">GreenValley #042</text>
+<text fill="#424845" font-family="JetBrains Mono" font-size="8.5" text-anchor="middle" x="0" y="70">Karnataka, IN</text>
+</g>
+<!-- NODE 2: BOTANICAL -->
+<g class="cursor-pointer" filter="url(#nodeShadow)" transform="translate(250, 110)">
+<circle fill="#FFFFFF" r="36"></circle>
+<circle fill="#EDFAF3" r="33"></circle>
+<circle fill="#52B788" r="18"></circle>
+<text fill="#FFFFFF" font-family="Material Symbols Outlined" font-size="16" text-anchor="middle" x="0" y="4">local_florist</text>
+<text fill="#111C2D" font-family="Space Grotesk" font-size="11" font-weight="600" text-anchor="middle" x="0" y="48">Curcuma longa</text>
+<text fill="#424845" font-family="JetBrains Mono" font-size="8.5" text-anchor="middle" x="0" y="60">Turmeric Grade A</text>
+</g>
+<!-- NODE 3: HARVEST BATCH (ACTIVE/SELECTED) -->
+<g class="cursor-pointer" filter="url(#nodeShadow)" transform="translate(400, 110)">
+<circle fill="#CAEADA" r="42"></circle>
+<circle fill="#F0F9FF" r="36"></circle>
+<circle fill="#0284C7" r="20"></circle>
+<text fill="#FFFFFF" font-family="Material Symbols Outlined" font-size="18" text-anchor="middle" x="0" y="5">inventory_2</text>
+<text fill="#00180F" font-family="Space Grotesk" font-size="11.5" font-weight="700" text-anchor="middle" x="0" y="52">TR-2024-089</text>
+<text fill="#0284C7" font-family="JetBrains Mono" font-size="8.5" font-weight="600" text-anchor="middle" x="0" y="64">1,200 kg • Active</text>
+</g>
+<!-- NODE 4: PROCESSOR -->
+<g class="cursor-pointer" filter="url(#nodeShadow)" transform="translate(550, 110)">
+<circle fill="#FFFFFF" r="36"></circle>
+<circle fill="#F5F3FF" r="33"></circle>
+<circle fill="#7C3AED" r="18"></circle>
+<text fill="#FFFFFF" font-family="Material Symbols Outlined" font-size="16" text-anchor="middle" x="0" y="4">biotech</text>
+<text fill="#111C2D" font-family="Space Grotesk" font-size="11" font-weight="600" text-anchor="middle" x="0" y="48">Kerala BioExtracts</text>
+<text fill="#424845" font-family="JetBrains Mono" font-size="8.5" text-anchor="middle" x="0" y="60">ISO-22000 Extr.</text>
+</g>
+<!-- NODE 5: MANUFACTURER -->
+<g class="cursor-pointer" filter="url(#nodeShadow)" transform="translate(700, 110)">
+<circle fill="#FFFFFF" r="36"></circle>
+<circle fill="#FFFBEB" r="33"></circle>
+<circle fill="#D97706" r="18"></circle>
+<text fill="#FFFFFF" font-family="Material Symbols Outlined" font-size="16" text-anchor="middle" x="0" y="4">factory</text>
+<text fill="#111C2D" font-family="Space Grotesk" font-size="11" font-weight="600" text-anchor="middle" x="0" y="48">PhytoPharm GMP</text>
+<text fill="#424845" font-family="JetBrains Mono" font-size="8.5" text-anchor="middle" x="0" y="60">Formulation Unit</text>
+</g>
+<!-- NODE 6: DISTRIBUTOR -->
+<g class="cursor-pointer" filter="url(#nodeShadow)" transform="translate(845, 110)">
+<circle fill="#FFFFFF" r="34"></circle>
+<circle fill="#F0FDFA" r="30"></circle>
+<circle fill="#0D9488" r="16"></circle>
+<text fill="#FFFFFF" font-family="Material Symbols Outlined" font-size="15" text-anchor="middle" x="0" y="4">local_shipping</text>
+<text fill="#111C2D" font-family="Space Grotesk" font-size="10.5" font-weight="600" text-anchor="middle" x="0" y="45">Global Herb Hub</text>
+<text fill="#424845" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="0" y="56">Cold Chain Track</text>
+</g>
+<!-- NODE 7: RETAILER -->
+<g class="cursor-pointer" filter="url(#nodeShadow)" transform="translate(950, 110)">
+<circle fill="#FFFFFF" r="26"></circle>
+<circle fill="#F8FAFC" r="22"></circle>
+<circle fill="#64748B" r="12"></circle>
+<text fill="#FFFFFF" font-family="Material Symbols Outlined" font-size="13" text-anchor="middle" x="0" y="4">store</text>
+<text fill="#111C2D" font-family="Space Grotesk" font-size="9.5" font-weight="600" text-anchor="middle" x="0" y="36">NatureWell</text>
+</g>
+</svg>
+</div>
+<!-- Active Selected Node Details Drawer -->
+<div class="p-space-md bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded bg-surface-container-lowest flex items-center justify-center text-[#0284C7] shadow-xs">
+<span class="material-symbols-outlined text-[20px]">fingerprint</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-outline">Selected Node:</span>
+<span class="font-body-semibold text-body-semibold text-on-surface">Harvest Batch #TR-2024-089</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">DNA Verified</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 mt-1 font-label-sm text-label-sm text-on-surface-variant">
+<span>Hash: <code class="text-on-surface font-label-sm font-mono">0x8f2d...e194</code></span>
+<span>Coords: <code class="text-on-surface font-label-sm font-mono">14.921°N, 75.688°E</code></span>
+<span>Lab Cert: <span class="text-secondary font-medium">#LAB-9041 (Eurofins)</span></span>
+<span>Active Moisture: <span class="text-on-surface font-medium">8.2%</span></span>
+</div>
+</div>
+</div>
+<button class="self-end md:self-auto px-space-sm py-1.5 bg-surface-container-lowest text-secondary hover:bg-secondary-fixed font-label-sm text-label-sm rounded shadow-xs flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[15px]">share</span>
+<span>Inspect Subgraph</span>
+</button>
+</div>
+</div>
+<!-- RECENT BOTANICAL BATCHES TABLE -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm flex flex-col overflow-hidden">
+<div class="p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Recent Botanical Batches</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Live physical lots linked to distributed graph ledgers</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2 top-2 text-[16px] text-outline">search</span>
+<input class="pl-7 pr-3 py-1 h-8 bg-surface-container-low text-on-surface font-label-sm text-label-sm rounded focus:outline-none focus:bg-surface-container" placeholder="Filter batch or farm..." type="text"/>
+</div>
+<button class="h-8 px-space-sm bg-surface-container-low text-on-surface-variant hover:text-on-surface rounded font-label-sm text-label-sm flex items-center gap-1 shadow-xs transition-colors">
+<span class="material-symbols-outlined text-[15px]">file_download</span>
+<span>Export CSV</span>
+</button>
+</div>
+</div>
+<!-- Tabular Grid -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+<tr>
+<th class="py-2.5 px-space-md">Batch ID</th>
+<th class="py-2.5 px-space-sm">Botanical Taxa</th>
+<th class="py-2.5 px-space-sm">Farm Origin</th>
+<th class="py-2.5 px-space-sm text-right">Yield</th>
+<th class="py-2.5 px-space-sm">Supply Stage</th>
+<th class="py-2.5 px-space-sm">Integrity Status</th>
+<th class="py-2.5 px-space-md text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface">
+<!-- Row 1 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-mono font-medium text-secondary">#TR-2024-884</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#EDFAF3] text-[#1B4332] font-label-sm text-label-sm">
+<span class="h-1.5 w-1.5 rounded-full bg-[#52B788]"></span> Turmeric (C. longa)
+                    </span>
+</td>
+<td class="py-3 px-space-sm">Sahyadri Organics, MH</td>
+<td class="py-3 px-space-sm text-right font-mono font-medium">1,450 kg</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1.5 text-on-surface font-medium">
+<span class="h-2 w-2 rounded-full bg-[#7C3AED]"></span> Processing
+                    </span>
+</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Anchored
+                    </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<button class="text-secondary hover:text-primary font-label-sm text-label-sm font-semibold inline-flex items-center gap-0.5">
+                      Trace <span class="material-symbols-outlined text-[13px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface-container-low/20 hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-mono font-medium text-secondary">#NM-2024-412</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span> Neem (A. indica)
+                    </span>
+</td>
+<td class="py-3 px-space-sm">Cauvery Herbal Coop, KA</td>
+<td class="py-3 px-space-sm text-right font-mono font-medium">820 kg</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1.5 text-on-surface font-medium">
+<span class="h-2 w-2 rounded-full bg-[#0D9488]"></span> Distribution
+                    </span>
+</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#F0F9FF] text-[#0369A1] font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">biotech</span> In Lab Audit
+                    </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<button class="text-secondary hover:text-primary font-label-sm text-label-sm font-semibold inline-flex items-center gap-0.5">
+                      Trace <span class="material-symbols-outlined text-[13px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-mono font-medium text-secondary">#TR-2024-885</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#EDFAF3] text-[#1B4332] font-label-sm text-label-sm">
+<span class="h-1.5 w-1.5 rounded-full bg-[#52B788]"></span> Turmeric (C. longa)
+                    </span>
+</td>
+<td class="py-3 px-space-sm">Nilgiri Agro Forest, TN</td>
+<td class="py-3 px-space-sm text-right font-mono font-medium">2,100 kg</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1.5 text-on-surface font-medium">
+<span class="h-2 w-2 rounded-full bg-[#64748B]"></span> Retail Verify
+                    </span>
+</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Anchored
+                    </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<button class="text-secondary hover:text-primary font-label-sm text-label-sm font-semibold inline-flex items-center gap-0.5">
+                      Trace <span class="material-symbols-outlined text-[13px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface-container-low/20 hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-mono font-medium text-secondary">#NM-2024-413</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span> Neem (A. indica)
+                    </span>
+</td>
+<td class="py-3 px-space-sm">Cauvery Herbal Coop, KA</td>
+<td class="py-3 px-space-sm text-right font-mono font-medium">640 kg</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1.5 text-on-surface font-medium">
+<span class="h-2 w-2 rounded-full bg-[#2C694E]"></span> Farm Origin
+                    </span>
+</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">hourglass_empty</span> Pending Anchor
+                    </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<button class="text-secondary hover:text-primary font-label-sm text-label-sm font-semibold inline-flex items-center gap-0.5">
+                      Trace <span class="material-symbols-outlined text-[13px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-mono font-medium text-error">#AW-2024-102</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">
+<span class="h-1.5 w-1.5 rounded-full bg-[#D97706]"></span> Ashwagandha (W. somnifera)
+                    </span>
+</td>
+<td class="py-3 px-space-sm">Deccan Botanics, AP</td>
+<td class="py-3 px-space-sm text-right font-mono font-medium">1,890 kg</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1.5 text-on-surface font-medium">
+<span class="h-2 w-2 rounded-full bg-error"></span> QA Quarantine
+                    </span>
+</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">priority_high</span> Discrepancy
+                    </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<button class="text-error hover:text-error-container font-label-sm text-label-sm font-semibold inline-flex items-center gap-0.5">
+                      Audit <span class="material-symbols-outlined text-[13px]">chevron_right</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer -->
+<div class="p-space-sm bg-surface-container-low/30 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Showing 5 of 1,845 graph batch nodes</span>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-container-low text-on-surface disabled:opacity-50" disabled="">←</button>
+<span class="px-2 font-medium text-on-surface">Page 1</span>
+<button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface">→</button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (5 COLS) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- HARVEST VOLUME BAR CHART CARD -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Harvest Volume by Origin Farm</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Top-producing registered botanical cooperatives</p>
+</div>
+<div class="flex items-center bg-surface-container-low p-0.5 rounded">
+<button class="px-2 py-0.5 rounded bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-semibold shadow-xs">MT</button>
+<button class="px-2 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm">Batches</button>
+</div>
+</div>
+<!-- Clean Horizontal Bar Chart -->
+<div class="mt-space-md flex flex-col gap-space-sm">
+<!-- Bar 1 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="font-medium text-on-surface">Sahyadri Organics (MH)</span>
+<span class="font-mono text-secondary font-semibold">42.0 MT (33.7%)</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-2.5 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 88%;"></div>
+</div>
+</div>
+<!-- Bar 2 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="font-medium text-on-surface">Cauvery Herbal Coop (KA)</span>
+<span class="font-mono text-secondary font-semibold">36.0 MT (28.9%)</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-2.5 overflow-hidden">
+<div class="bg-[#52B788] h-full rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Bar 3 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="font-medium text-on-surface">Nilgiri Agro Forest (TN)</span>
+<span class="font-mono text-secondary font-semibold">28.0 MT (22.5%)</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-2.5 overflow-hidden">
+<div class="bg-secondary/70 h-full rounded-full" style="width: 58%;"></div>
+</div>
+</div>
+<!-- Bar 4 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="font-medium text-on-surface">Deccan Botanics (AP)</span>
+<span class="font-mono text-secondary font-semibold">21.0 MT (16.8%)</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-2.5 overflow-hidden">
+<div class="bg-[#75DAA8] h-full rounded-full" style="width: 44%;"></div>
+</div>
+</div>
+<!-- Bar 5 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="font-medium text-on-surface">Wayanad Spices (KL)</span>
+<span class="font-mono text-secondary font-semibold">18.0 MT (14.4%)</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-2.5 overflow-hidden">
+<div class="bg-outline-variant h-full rounded-full" style="width: 37%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- BOTANICAL BATCH DISTRIBUTION DONUT -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Botanical Taxa Distribution</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Active raw botanical biomass across ledger</p>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low text-on-surface font-label-sm text-label-sm">
+              124.5 MT Total
+            </span>
+</div>
+<div class="mt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<!-- Donut Chart SVG -->
+<div class="relative w-36 h-36 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 42 42">
+<circle cx="21" cy="21" fill="transparent" r="15.91549430918954" stroke="#E2E8F0" stroke-width="4.5"></circle>
+<!-- Turmeric: 58% -->
+<circle cx="21" cy="21" fill="transparent" r="15.91549430918954" stroke="#2C694E" stroke-dasharray="58 42" stroke-dashoffset="0" stroke-width="4.5"></circle>
+<!-- Neem: 32% -->
+<circle cx="21" cy="21" fill="transparent" r="15.91549430918954" stroke="#52B788" stroke-dasharray="32 68" stroke-dashoffset="-58" stroke-width="4.5"></circle>
+<!-- Ashwagandha: 10% -->
+<circle cx="21" cy="21" fill="transparent" r="15.91549430918954" stroke="#D97706" stroke-dasharray="10 90" stroke-dashoffset="-90" stroke-width="4.5"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface leading-none">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase text-[9px]">Taxa</span>
+</div>
+</div>
+<!-- Taxa Legend / Metrics -->
+<div class="flex flex-col gap-space-xs w-full">
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-low/40">
+<div class="flex items-center gap-2">
+<span class="h-2.5 w-2.5 rounded-full bg-secondary"></span>
+<div class="flex flex-col">
+<span class="font-body-semibold text-body-semibold leading-tight">Turmeric</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Curcuma longa</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-body-semibold text-body-semibold block">58%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">72,210 kg</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-low/40">
+<div class="flex items-center gap-2">
+<span class="h-2.5 w-2.5 rounded-full bg-[#52B788]"></span>
+<div class="flex flex-col">
+<span class="font-body-semibold text-body-semibold leading-tight">Neem</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Azadirachta indica</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-body-semibold text-body-semibold block">32%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">39,840 kg</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container-low/40">
+<div class="flex items-center gap-2">
+<span class="h-2.5 w-2.5 rounded-full bg-[#D97706]"></span>
+<div class="flex flex-col">
+<span class="font-body-semibold text-body-semibold leading-tight">Ashwagandha</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Withania somnifera</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-body-semibold text-body-semibold block">10%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">12,450 kg</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quality Metric Indicator Chips -->
+<div class="grid grid-cols-2 gap-space-sm mt-space-md pt-space-sm border-t border-surface-container">
+<div class="p-2 rounded bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Avg Curcuminoid</span>
+<span class="font-body-semibold text-body-semibold text-secondary">5.2% ± 0.3%</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Batch Moisture</span>
+<span class="font-body-semibold text-body-semibold text-on-surface">7.9% Normal</span>
+</div>
+</div>
+</div>
+<!-- RECENT SUPPLY CHAIN EVENTS FEED (GRAPH EVENT LEDGER) -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Recent Supply Chain Events</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Live Sync</span>
+</div>
+<!-- Timeline Stack -->
+<div class="mt-space-md flex flex-col gap-space-md relative pl-4 before:content-[''] before:absolute before:left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container">
+<!-- Item 1 -->
+<div class="relative flex flex-col gap-0.5">
+<span class="absolute -left-4 top-1.5 h-2.5 w-2.5 rounded-full bg-[#7C3AED] ring-4 ring-surface-container-lowest"></span>
+<div class="flex items-center justify-between">
+<span class="font-body-semibold text-body-semibold text-on-surface">Batch #TR-2024-884 Processed</span>
+<span class="font-label-sm text-label-sm text-outline">12m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Extracted at Kerala BioExtracts Ltd. Yield verified 10:1 ratio.
+              </p>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-outline mt-0.5">
+<span>Hash: <code class="font-mono text-on-surface">0x41e8...9a</code></span>
+<span>Stage: <span class="text-[#7C3AED] font-semibold">Processing</span></span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="relative flex flex-col gap-0.5">
+<span class="absolute -left-4 top-1.5 h-2.5 w-2.5 rounded-full bg-secondary ring-4 ring-surface-container-lowest"></span>
+<div class="flex items-center justify-between">
+<span class="font-body-semibold text-body-semibold text-on-surface">New Harvest Node Created</span>
+<span class="font-label-sm text-label-sm text-outline">45m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Cauvery Farm #12 registered 640 kg raw Neem Leaf biomass.
+              </p>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-outline mt-0.5">
+<span>Lot: <span class="font-mono text-secondary">#NM-2024-413</span></span>
+<span>Type: <span class="text-on-surface">Azadirachta indica</span></span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="relative flex flex-col gap-0.5">
+<span class="absolute -left-4 top-1.5 h-2.5 w-2.5 rounded-full bg-[#0284C7] ring-4 ring-surface-container-lowest"></span>
+<div class="flex items-center justify-between">
+<span class="font-body-semibold text-body-semibold text-on-surface">Quality Certificate Attached</span>
+<span class="font-label-sm text-label-sm text-outline">2h ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Eurofins AgriLab attached heavy metal & HPLC certificate for Batch #AW-2024-102.
+              </p>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-outline mt-0.5">
+<span class="text-error font-medium">Flag: Heavy metal alert</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="relative flex flex-col gap-0.5">
+<span class="absolute -left-4 top-1.5 h-2.5 w-2.5 rounded-full bg-[#0D9488] ring-4 ring-surface-container-lowest"></span>
+<div class="flex items-center justify-between">
+<span class="font-body-semibold text-body-semibold text-on-surface">Transfer Edge Recorded</span>
+<span class="font-label-sm text-label-sm text-outline">3h ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Hub #4 dispatch confirmed to NatureWell Retail (Bangalore flagship).
+              </p>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-outline mt-0.5">
+<span>Temp: <code class="text-on-surface font-mono">19.2°C (Cold Chain OK)</code></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

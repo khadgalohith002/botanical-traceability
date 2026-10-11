@@ -1,0 +1,24 @@
+# Netlify Build and Deployment Configuration for PhytoTrace
+# Frontend: React + Vite + Tailwind CSS
+
+[build]
+  base = "frontend"
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Single-Page Application (SPA) Client-Side Routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Optional: When deploying FastAPI backend to a platform like Render/Fly.io/Railway/Heroku,
+# set VITE_API_BASE_URL environment variable in Netlify Site Settings, or proxy requests:
+# [[redirects]]
+#   from = "/api/*"
+#   to = "https://your-phytotrace-api.onrender.com/api/:splat"
+#   status = 200
+#   force = false
